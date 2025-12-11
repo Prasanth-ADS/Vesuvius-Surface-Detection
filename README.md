@@ -263,5 +263,6 @@ MIT License — free to use, modify, distribute.
 
 ---
 
-* How to use the project
+
+
 
