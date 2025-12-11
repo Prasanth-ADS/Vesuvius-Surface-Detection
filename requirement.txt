@@ -1,0 +1,69 @@
+```
+# Core ML Libraries
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+
+# Array & Image Processing
+numpy>=1.23.0
+scipy>=1.10.0
+scikit-image>=0.22.0
+pillow>=10.0.0
+
+# TIFF Support (VERY IMPORTANT for LZW TIFF from Vesuvius Challenge)
+tifffile>=2023.7.10
+imagecodecs>=2023.3.16
+
+# General Utilities
+tqdm>=4.65.0
+matplotlib>=3.7.1
+
+# Optional — performance improvements
+numba>=0.58.0
+
+# Optional — logging & visualization
+tensorboard>=2.15.0
+```
+
+---
+
+# 📌 Notes about this requirements list
+
+### ⭐ `tifffile` + `imagecodecs`
+
+These two packages **fix the exact LZW decoding error** you had earlier:
+
+```
+ValueError: <COMPRESSION.LZW: 5> requires the 'imagecodecs' package
+```
+
+Without `imagecodecs`, Vesuvius datasets fail to load on Windows/Linux.
+
+---
+
+### ⭐ Torch Version
+
+`torch>=2.1.0` is chosen because:
+
+* Offers `torch.compile()` for faster training
+* Includes stable AMP (`torch.amp`)
+* Works on Kaggle GPU environment
+* Compatible with A100 / V100 / T4 GPUs
+
+---
+
+### ⭐ numba (optional)
+
+This can accelerate some CPU preprocessing functions.
+
+---
+
+### ⭐ tensorboard (optional)
+
+If you want real-time loss curves:
+
+```
+tensorboard --logdir runs
+```
+
+---
