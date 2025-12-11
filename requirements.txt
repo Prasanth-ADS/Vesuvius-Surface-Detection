@@ -1,0 +1,9 @@
+torch
+zarr
+tifffile
+scikit-image
+numpy
+torchmetrics
+jupyter
+ipykernel
+matplotlib

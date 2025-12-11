@@ -1,2 +1,16 @@
-# Vesivus-Surface-Detection
-Building a deep-learning surface detection system for the Vesuvius Challenge using optimized U-Net/ResNet models and multi-scale inference to detect ink patterns in 3D CT scroll data.Advancing computational archaeology by improving voxel accuracy and enabling recovery of ancient text without unwrapping the scrolls.
+# Vesuvius Challenge - Surface Detection
+
+Full production ML pipeline for the Vesuvius Challenge.
+
+## Structure
+- `data/`: Dataset (train/test images and labels)
+- `src/`: Source code for the pipeline
+- `notebooks/`: Jupyter notebooks for EDA, training, and inference
+- `checkpoints/`: Model checkpoints
+- `submission/`: Kaggle submission files
+
+## Setup
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
